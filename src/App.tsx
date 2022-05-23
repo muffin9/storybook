@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import Test from '@/Test';
 
 export default function App(): JSX.Element {
   useEffect(() => {
@@ -13,6 +14,7 @@ export default function App(): JSX.Element {
   return (
     <>
       <div>Muffin's boilerPlate!</div>
+      <Test />
     </>
   );
 }
