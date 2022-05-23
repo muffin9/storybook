@@ -12,6 +12,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
+    alias: { '@': path.resolve(__dirname, 'src/') },
   },
   module: {
     rules: [
@@ -25,9 +26,18 @@ module.exports = {
         ],
       },
       {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+      {
         test: /\.(ts|tsx)$/,
         use: 'ts-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
+        use: ['file-loader'],
       },
     ],
   },
@@ -55,4 +65,7 @@ module.exports = {
       reportFilename: './report.html',
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };
