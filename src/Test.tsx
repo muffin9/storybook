@@ -1,3 +1,3 @@
-export default function Test(): JSX.Element {
+export default function Test() {
   return <div>Test</div>;
 }

@@ -1,16 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "esnext",
+    "target": "es5",
+    "lib": ["DOM", "esnext"],
     "jsx": "react-jsx",
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
+    "module": "commonjs",
     "allowJs": true,
-    "outDir": "./dist",
+    "sourceMap": true,
     "strict": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "baseUrl": ".",
-    "paths": { "@/*": ["src/*"] }
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
