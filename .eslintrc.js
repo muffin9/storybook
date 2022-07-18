@@ -41,8 +41,7 @@ module.exports = {
     // props의 타입체크를 처리에 proptypes가 아닌 typescript 사용
     '@typescript-eslint/no-var-requires': 'off',
     // require문 사용하도록 off 속성 켜기
-    'import/no-unresolved': 0,
-    'import/prefer-default-export': 0,
+    'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': [
       'error',
       {
