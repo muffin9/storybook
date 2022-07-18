@@ -15,19 +15,41 @@ module.exports = {
     'airbnb',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
-    'prettier', // prettier plugin을 eslint 설정에 추가
-  ], // 사용할 규칙을 설정 typescript만 사용할거기에 airbnb-typescript/base
-  plugins: ['prettier'], // 서드파티 플러그인 사용을 지원 prettier 코드 스타일이 어긋나면 eslint에 걸리도록 처리
-  parser: '@typescript-eslint/parser', // 내가 작성한 코드를 분석하기 위한 파싱툴
+    'prettier',
+  ],
+  // 사용할 규칙을 설정 typescript만 사용할거기에 airbnb-typescript/base
+  plugins: ['prettier'],
+  // 서드파티 플러그인 사용을 지원 prettier 코드 스타일이 어긋나면 eslint에 걸리도록 처리
+  parser: '@typescript-eslint/parser',
+  // 내가 작성한 코드를 분석하기 위한 파싱툴
   rules: {
     'prettier/prettier': 'error',
-    'react/jsx-props-no-spreading': 'off', // 넘겨받은 props를 spread 허용
-    'react/jsx-filename-extension': ['warn', { extensions: ['tsx', 'jsx'] }], // jsx파일 내에서 jsx, tsx 문법 허용
-    'react/react-in-jsx-scope': 'off', // 최상단에 import React'를 생략
-    'react/require-default-props': 'off', // type 지정시 optional 연산자를 사용했을때 막기 위한 속성
-    'react/prop-types': 'off', // props의 타입체크를 처리에 proptypes가 아닌 typescript 사용
-    '@typescript-eslint/no-var-requires': 'off', // require문 사용하도록 off 속성 켜기
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }], // 테스트 또는 개발환경을 구성하는 파일에서는 devDependency 사용을 허용
+    'react/jsx-props-no-spreading': 'off',
+    // 넘겨받은 props를 spread 허용
+    'react/jsx-filename-extension': [
+      'warn',
+      {
+        extensions: ['tsx', 'jsx'],
+      },
+    ],
+    // jsx파일 내에서 jsx, tsx 문법 허용
+    'react/react-in-jsx-scope': 'off',
+    // 최상단에 import React'를 생략
+    'react/require-default-props': 'off',
+    // type 지정시 optional 연산자를 사용했을때 막기 위한 속성
+    'react/prop-types': 'off',
+    // props의 타입체크를 처리에 proptypes가 아닌 typescript 사용
+    '@typescript-eslint/no-var-requires': 'off',
+    // require문 사용하도록 off 속성 켜기
+    'import/no-unresolved': 0,
+    'import/prefer-default-export': 0,
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+      },
+    ],
+    // 테스트 또는 개발환경을 구성하는 파일에서는 devDependency 사용을 허용
     'react/function-component-definition': [
       // 함수형 컴포넌트 선언방식
       2,
