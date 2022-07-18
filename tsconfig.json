@@ -1,20 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES5", // ECMAScript 대상 버전 지정 (기본 값은 ES3)
     "lib": ["DOM", "esnext"],
-    "jsx": "react-jsx",
-    "module": "commonjs",
-    "allowJs": true,
-    "sourceMap": true,
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "baseUrl": ".",
-    "outDir": "./dist",
+    "jsx": "react-jsx", // react 프로젝트라면 해당 속성 입력.
+    "module": "commonjs", // 모듈 코드 생성 지정
+    "allowJs": true, //  JS 컴파일 허용
+    "baseUrl": ".", // 기본 디렉터리 위치 설정
     "paths": {
-      "@/*": ["src/*"]
-    }
+      "@/*": ["src/*"] // baseUrl를 기준으로하여 src폴더 아래의 파일들만 체킹하기 위해 경로 지정
+			// import { $ } from '@/utils/dom'; 요런식으로 사용가능
+    },
+    "outDir": "./dist", // 타입스크립트가 컴파일한 파일들 출력 경로
+		"sourceMap": true,
+    "esModuleInterop": true, // ES6 모듈 사양을 준수하여 CommonJS 모듈을 가져올수 있다.
+    "strict": true, // 타입 검사 옵션 엄격하게 설정
+    "skipLibCheck": true // 모든 선언 파일(*.d.ts)의 타입 검사 스킵
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"], // 타입을 체킹 포함할 폴더 및 파일 지정
+  "exclude": ["node_modules", "dist"] // 타입을 체킹 해제할 폴더 지정
 }

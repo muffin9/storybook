@@ -1,16 +1,13 @@
 {
-  "presets": [
-    [
+  "presets": [[
       "@babel/preset-env",
       {
-        "targets": {
-          "browsers": ["> 1% in KR, not dead"]
-        },
-        "useBuiltIns": "usage",
-        "corejs": { "version": 3, "proposals": true }
+        "targets": "> 1%, not dead", // 타깃 브라우저에 필요한 플러그인만 삽입하도록 설정하는 옵션
+        "useBuiltIns": "usage",  // usage 설정은 실제 사용한 폴리필만 삽입
+        "corejs": { "version": "3" }
       }
     ],
-    ["@babel/preset-react", { "runtime": "automatic" }],
+    ["@babel/preset-react", {"runtime": "automatic"}],
     "@babel/preset-typescript"
   ]
 }
